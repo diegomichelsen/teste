@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LTEC – Contratação de Soluções</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070817;--bg2:#0d0f26;--card:#12142f;--card2:#171a3b;--line:#2a2e5c;--tx:#eef0ff;--mut:#9aa0cc;--pri:#8b5cf6;--pri2:#6d3df0;--ok:#22c55e;--okbg:rgba(34,197,94,.14);--glow:rgba(139,92,246,.35);--sh:0 10px 40px rgba(0,0,0,.45);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"]{--bg:#f4f5fc;--bg2:#fff;--card:#fff;--card2:#f1f2fb;--line:#d9dcf0;--tx:#14163a;--mut:#5d6290;--pri:#6d3df0;--pri2:#5a2de0;--ok:#15803d;--okbg:rgba(21,128,61,.12);--glow:rgba(109,61,240,.18);--sh:0 10px 30px rgba(40,40,100,.12)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.5;
+background-image:radial-gradient(900px 500px at 85% -5%,var(--glow),transparent 60%),radial-gradient(700px 400px at 0% 30%,var(--glow),transparent 60%);background-attachment:fixed}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:.5px}
+.logo small{display:block;font-size:10px;font-weight:500;color:var(--mut);letter-spacing:0}
+nav{display:flex;gap:2px;margin-left:12px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+nav::-webkit-scrollbar{display:none}
+nav a{padding:8px 10px;border-radius:10px;color:var(--mut);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
+nav a.on{background:color-mix(in srgb,var(--pri) 22%,transparent);color:var(--tx)}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:9px 16px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--pri)}
+header .btn{flex:none;white-space:nowrap;padding:9px 12px}
+header .wrap{gap:12px}
+.btn.pri{background:linear-gradient(135deg,var(--pri),var(--pri2));border:0;color:#fff;box-shadow:0 8px 24px var(--glow)}
+.btn.pri:hover{filter:brightness(1.1)}
+.btn.full{width:100%;justify-content:center;padding:14px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.hero{padding:36px 0 18px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.tag{display:inline-block;border:1px solid var(--line);background:var(--card);padding:5px 14px;border-radius:999px;font-size:13px;color:var(--mut)}
+h1{font-size:clamp(28px,4vw,46px);margin:14px 0 8px;line-height:1.1;letter-spacing:-.02em;font-weight:800}
+h1 em{font-style:normal;color:var(--pri)}
+.sub{color:var(--mut);margin:0;font-size:17px;max-width:620px}
+.stack{width:130px;height:130px;flex:none;filter:drop-shadow(0 10px 30px var(--glow))}
+.steps{display:flex;gap:8px;margin:22px 0;padding:8px;border:1px solid var(--line);background:var(--card);border-radius:16px;overflow-x:auto}
+.step{flex:1;display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;color:var(--mut);font-size:14px;white-space:nowrap}
+.step b{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--card2);border:1px solid var(--line);font-size:13px}
+.step.on{background:color-mix(in srgb,var(--pri) 20%,transparent);color:var(--tx)}
+.step.on b{background:var(--pri);border-color:var(--pri);color:#fff}
+.layout{display:grid;grid-template-columns:1fr 410px;gap:24px;align-items:start;padding-bottom:30px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--sh)}
+.ph{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.ph h2{margin:0;font-size:20px}
+.sw{display:flex;align-items:center;gap:10px;font-size:13px;border:1px solid var(--line);background:var(--card2);padding:7px 14px;border-radius:999px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.sol{--c:var(--pri);position:relative;text-align:left;background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,box-shadow .2s}
+.sol.on{border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 10px 30px color-mix(in srgb,var(--c) 28%,transparent)}
+.sol .top{display:flex;gap:12px;align-items:center}
+.ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:color-mix(in srgb,var(--c) 22%,transparent);flex:none}
+.sol h3{margin:0;font-size:16px;line-height:1.2;flex:1}
+.chk{width:24px;height:24px;border-radius:7px;border:2px solid var(--line);display:grid;place-items:center;flex:none;font-size:14px;color:#fff;background:transparent}
+.sol.on .chk{background:var(--c);border-color:var(--c)}
+.sol p{margin:0;color:var(--mut);font-size:13.5px}
+.sol ul{list-style:none;margin:0;padding:0;font-size:13.5px;display:grid;gap:4px}
+.sol li:before{content:"✓";color:var(--c);font-weight:700;margin-right:8px}
+.sol .pr{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}
+.sol .pr b{color:var(--tx);font-size:14px}
+.sol .sel{all:unset;position:absolute;inset:0;border-radius:16px;cursor:pointer}
+.sol .sel:focus-visible{outline:2px solid var(--pri)}
+.plus{margin-top:18px;display:flex;align-items:center;gap:18px;padding:18px 22px;border-radius:16px;border:1px solid var(--pri);background:linear-gradient(120deg,color-mix(in srgb,var(--pri) 24%,var(--card)),var(--card));flex-wrap:wrap}
+.plus.lock{opacity:.8}
+.plus.open{box-shadow:0 0 0 1px var(--pri),0 10px 40px var(--glow)}
+.plus h4{margin:0;font-size:20px;line-height:1.15}
+.plus p{margin:0;color:var(--mut);font-size:14px;flex:1;min-width:220px}
+.badge{font-size:13px;font-weight:600;padding:8px 14px;border-radius:10px;background:color-mix(in srgb,var(--pri) 25%,transparent);border:1px solid var(--pri)}
+.aside{position:sticky;top:84px}
+.cart{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.cart h2{margin:0;font-size:22px}.cart small{color:var(--mut)}
+.pill{background:var(--okbg);color:var(--ok);border:1px solid var(--ok);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600}
+.items{display:grid;gap:8px;margin-bottom:6px}
+.it{display:flex;align-items:center;gap:12px;padding:8px 12px;background:var(--card2);border:1px solid var(--line);border-radius:12px;font-weight:600;font-size:14px}
+.it .ico{width:34px;height:34px;font-size:17px}.it span{flex:1}
+.it button{background:none;border:0;color:var(--mut);font-size:18px;padding:4px 8px;border-radius:8px}
+.it button:hover{color:var(--tx);background:var(--card)}
+.empty{padding:18px;border:1px dashed var(--line);border-radius:12px;color:var(--mut);font-size:14px;text-align:center}
+.sec{margin:18px 0 8px;font-weight:700;font-size:15px;padding-top:16px;border-top:1px solid var(--line)}
+.ben{display:flex;align-items:center;gap:12px;padding:8px 0}
+.ben .ico{width:36px;height:36px;font-size:17px;background:color-mix(in srgb,var(--pri) 18%,transparent)}
+.ben div{flex:1;line-height:1.25}.ben b{font-size:14px;display:block}.ben small{color:var(--mut);font-size:12px}
+.inc{font-size:12px;font-weight:600;color:var(--ok);background:var(--okbg);border:1px solid var(--ok);padding:3px 10px;border-radius:8px}
+.sim{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;margin:10px 0 18px}
+.sim small{display:block;color:var(--mut);font-size:12px}.sim b{font-size:22px}.sim b i{font-size:12px;font-style:normal;color:var(--mut);font-weight:500}
+.save{background:var(--okbg);color:var(--ok);border:1px solid var(--ok);padding:6px 14px;border-radius:10px;font-weight:800;font-size:18px;text-align:center}
+.note{font-size:12px;color:var(--mut);display:flex;justify-content:space-between}
+.stack2{display:grid;gap:10px}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;padding:22px 0 40px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+.feats div{display:flex;gap:10px;align-items:center}.feats span{font-size:22px}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(520px,100%);background:var(--bg2);border-left:1px solid var(--line);z-index:40;padding:calc(20px + env(safe-area-inset-top,0px)) 22px calc(20px + env(safe-area-inset-bottom,0px));overflow:auto;transform:translateX(105%);transition:transform .25s;box-shadow:var(--sh)}
+.drawer.open{transform:none}
+.drawer h2{margin:0 0 4px}.drawer p{color:var(--mut);font-size:13px;margin:0 0 14px}
+.drawer fieldset{border:1px solid var(--line);border-radius:14px;margin:0 0 12px;padding:12px;display:grid;gap:8px}
+.drawer legend{font-weight:700;font-size:14px;padding:0 6px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+label{font-size:12px;color:var(--mut);display:grid;gap:4px}
+input,textarea{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%}
+textarea{min-height:70px;resize:vertical}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(3,4,14,.7);display:none;place-items:center;padding:20px}
+.modal.open{display:grid}
+.modal .box{width:min(480px,100%);background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--sh);display:grid;gap:12px}
+.modal h3{margin:0;font-size:20px}
+.sumr{display:flex;justify-content:space-between;font-size:14px;color:var(--mut)}.sumr b{color:var(--tx)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;background:var(--ok);color:#fff;padding:12px 20px;border-radius:12px;font-weight:600;z-index:60;transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1020px){.layout{grid-template-columns:1fr}.aside{position:static}.stack{display:none}nav{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="logo"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 3 31 10 17 17 3 10Z" fill="#8b5cf6"/><path d="M3 17 17 24 31 17" stroke="#a78bfa" stroke-width="2.5"/><path d="M3 24 17 31 31 24" stroke="#c4b5fd" stroke-width="2.5"/></svg><div><span id="brand">LTEC</span><small>Soluções Inteligentes</small></div></div>
+  <nav><a href="#">Soluções</a><a class="on" href="#">Planos e Contratação</a><a href="#">Consultoria</a><a href="#">Cases</a><a href="#">Academy</a><a href="#">Sobre</a><a href="#">Contato</a></nav>
+  <button class="btn" id="theme" aria-label="Alternar tema">🌙 Tema</button>
+  <button class="btn" id="openEdit">⚙ Editar dados</button>
+  <button class="btn">Portal do Cliente</button>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="tag">Contratação de Soluções</span>
+      <h1>Monte o ecossistema ideal para <em>sua empresa</em></h1>
+      <p class="sub">Selecione uma ou mais soluções, simule seu pacote e receba uma proposta personalizada.</p>
+    </div>
+    <svg class="stack" viewBox="0 0 130 130" fill="none"><path d="M65 8 120 36 65 64 10 36Z" fill="#22d3ee" opacity=".9"/><path d="M10 54 65 82 120 54" stroke="#8b5cf6" stroke-width="10" stroke-linejoin="round"/><path d="M10 78 65 106 120 78" stroke="#c4b5fd" stroke-width="10" stroke-linejoin="round"/></svg>
+  </section>
+
+  <div class="steps" id="steps"></div>
+
+  <div class="layout">
+    <section>
+      <div class="panel">
+        <div class="ph"><h2>Soluções Disponíveis</h2>
+          <label class="sw"><span>Selecionar todas (Ecossistema completo)</span><input type="checkbox" id="all" style="width:auto"></label></div>
+        <div class="grid" id="grid"></div>
+        <div class="plus" id="plus"></div>
+      </div>
+    </section>
+
+    <aside class="aside"><div class="panel">
+      <div class="cart"><div><h2>Seu Pacote</h2><small id="count"></small></div><span class="pill">Pacote Personalizado</span></div>
+      <div class="items" id="items"></div>
+      <div class="sec">Benefícios inclusos no seu pacote</div>
+      <div id="bens"></div>
+      <div class="sec">Simulação de Investimento</div>
+      <div class="sim">
+        <div><small>Implantação (única)</small><b id="setup"></b></div>
+        <div><small>Mensalidade</small><b id="month"></b></div>
+        <div><small>Economia</small><div class="save" id="disc"></div></div>
+      </div>
+      <div class="note"><span id="gross"></span><span>Valores estimados</span></div>
+      <div class="stack2" style="margin-top:14px">
+        <button class="btn pri full" id="propose">Solicitar Proposta Personalizada →</button>
+        <button class="btn full" id="reset">Simular outro pacote</button>
+      </div>
+    </div></aside>
+  </div>
+
+  <div class="feats">
+    <div><span>🛡</span>Integração entre soluções</div><div><span>⚡</span>Resultados em menos tempo</div>
+    <div><span>📊</span>Visão completa da operação</div><div><span>🎧</span>Suporte especializado</div><div><span>📈</span>Evolução contínua e escalável</div>
+  </div>
+</main>
+
+<!-- Editor de dados -->
+<div class="drawer" id="drawer" role="dialog" aria-label="Editar dados">
+  <div class="ph"><h2>Editar dados</h2><button class="btn" id="closeEdit">Fechar</button></div>
+  <p>Tudo o que aparece na página vem destes dados. As alterações são aplicadas na hora.</p>
+  <fieldset><legend>Geral</legend>
+    <label>Nome da marca<input id="e-brand"></label>
+    <label>Moeda (código)<input id="e-cur" maxlength="3"></label>
+  </fieldset>
+  <div id="e-sols"></div>
+  <fieldset><legend>Desconto por quantidade de soluções (%)</legend><div class="row" id="e-tiers"></div></fieldset>
+  <fieldset><legend>Dados em JSON (copiar ou colar para importar)</legend>
+    <textarea id="json" style="min-height:140px;font-family:ui-monospace,Menlo,monospace;font-size:12px"></textarea>
+    <div class="row"><button class="btn" id="applyJson">Aplicar JSON</button><button class="btn" id="restore">Restaurar padrão</button></div>
+  </fieldset>
+</div>
+
+<!-- Proposta -->
+<div class="modal" id="modal"><div class="box">
+  <h3>Solicitar proposta personalizada</h3>
+  <div id="msum"></div>
+  <label>Nome<input id="p-name" placeholder="Seu nome"></label>
+  <label>Empresa<input id="p-co" placeholder="Nome da empresa"></label>
+  <label>E-mail corporativo<input id="p-mail" type="email" placeholder="voce@empresa.com"></label>
+  <div class="row"><button class="btn" id="mcancel">Cancelar</button><button class="btn pri" id="msend">Enviar solicitação</button></div>
+</div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const DEFAULT = {
+  brand:"LTEC", currency:"BRL", tiers:{1:0,2:10,3:12,4:15,5:18},
+  solutions:[
+    {id:"atend",icon:"💬",color:"#22d3ee",name:"Atendimento Inteligente",desc:"Automatize o atendimento, reduza o tempo de resposta e aumente a satisfação.",feats:["Chatbots e assistentes com IA","Atendimento multicanal","Triagem e direcionamento automático"],setup:900,monthly:590},
+    {id:"monit",icon:"🛡",color:"#a78bfa",name:"Monitoria Inteligente",desc:"Garanta qualidade, conformidade e evolução contínua da sua operação.",feats:["Auditoria automatizada de atendimentos","Detecção de falhas e riscos","Indicadores e relatórios de qualidade"],setup:766,monthly:399},
+    {id:"fin",icon:"💰",color:"#22c55e",name:"Inteligência Financeira",desc:"Automatize controles, cobranças e conciliações com segurança e precisão.",feats:["Contas a pagar e receber","Conciliação bancária","Alertas e relatórios financeiros"],setup:950,monthly:520},
+    {id:"com",icon:"📊",color:"#f59e0b",name:"Inteligência Comercial e Marketing",desc:"Atraia, qualifique e converta mais oportunidades de negócio.",feats:["Captação e qualificação de leads","Integração com CRM","Follow-ups e automações de vendas"],setup:880,monthly:480},
+    {id:"rh",icon:"👥",color:"#3b82f6",name:"Inteligência de Departamento Pessoal",desc:"Automatize rotinas de RH, reduza tarefas manuais e ganhe eficiência.",feats:["Admissão e onboarding","Gestão de documentos e prazos","Notificações e processos internos"],setup:820,monthly:430}
+  ],
+  benefits:[
+    {icon:"📈",name:"Automation Control Tower",desc:"Monitoramento, saúde e confiabilidade"},
+    {icon:"🗂",name:"Portal do Cliente",desc:"Acompanhamento, resultados e suporte"},
+    {icon:"📖",name:"Automation English Guide",desc:"Inglês aplicado à automação e tecnologia"},
+    {icon:"✨",name:"AI Mastery Guide",desc:"Guia prático de uso da IA nos negócios"}
+  ],
+  plus:{name:"Enterprise Intelligence Plus",text:"Contrate as 5 soluções e desbloqueie a sexta solução exclusiva, com inteligência integrada de toda a sua operação.",badge:"Benefício exclusivo do Ecossistema Completo"}
+};
+let D = clone(DEFAULT), sel = new Set(["atend","monit"]);
+try{const s=localStorage.getItem("ltec-data");if(s)D=JSON.parse(s)}catch(e){}
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function save(){try{localStorage.setItem("ltec-data",JSON.stringify(D))}catch(e){}}
+const $=id=>document.getElementById(id);
+const money=v=>new Intl.NumberFormat("pt-BR",{style:"currency",currency:D.currency||"BRL",maximumFractionDigits:0}).format(v);
+function calc(){
+  const s=D.solutions.filter(x=>sel.has(x.id));
+  const setup=s.reduce((a,x)=>a+Number(x.setup),0), month=s.reduce((a,x)=>a+Number(x.monthly),0);
+  const pct=Number(D.tiers[Math.min(s.length,5)]||0);
+  return {s,n:s.length,setup,month,pct,fs:setup*(1-pct/100),fm:month*(1-pct/100)};
+}
+function render(){
+  $("brand").textContent=D.brand;
+  const c=calc(), full=c.n>=D.solutions.length;
+  $("steps").innerHTML=["Escolha as soluções","Veja os benefícios","Simule seu pacote","Solicite a proposta"].map((t,i)=>{
+    const on=i===0||(c.n>0&&i<3);return `<div class="step ${on?"on":""}"><b>${i+1}</b>${t}</div>`}).join("");
+  $("grid").innerHTML=D.solutions.map(x=>`<div class="sol ${sel.has(x.id)?"on":""}" style="--c:${x.color}">
+    <button class="sel" data-id="${x.id}" role="checkbox" aria-checked="${sel.has(x.id)}" aria-label="${x.name}"></button>
+    <div class="top"><div class="ico">${x.icon}</div><h3>${x.name}</h3><div class="chk">${sel.has(x.id)?"✓":""}</div></div>
+    <p>${x.desc}</p><ul>${x.feats.map(f=>`<li>${f}</li>`).join("")}</ul>
+    <div class="pr"><span>Implantação ${money(x.setup)}</span><b>${money(x.monthly)}/mês</b></div></div>`).join("");
+  $("all").checked=full;
+  $("plus").className="plus "+(full?"open":"lock");
+  $("plus").innerHTML=`<span style="font-size:34px">👑</span><h4>${D.plus.name}</h4><p>${D.plus.text}</p><span class="badge">${full?"✓ Desbloqueado":"🔒 "+D.plus.badge}</span>`;
+  $("count").textContent=`${c.n} ${c.n===1?"solução selecionada":"soluções selecionadas"}`;
+  $("items").innerHTML=c.n?c.s.map(x=>`<div class="it" style="--c:${x.color}"><div class="ico">${x.icon}</div><span>${x.name}</span><button data-rm="${x.id}" aria-label="Remover ${x.name}">✕</button></div>`).join("")
+    :`<div class="empty">Selecione ao menos uma solução para montar seu pacote.</div>`;
+  $("bens").innerHTML=D.benefits.map(b=>`<div class="ben"><div class="ico">${b.icon}</div><div><b>${b.name}</b><small>${b.desc}</small></div><span class="inc">✓ Incluso</span></div>`).join("");
+  $("setup").textContent=money(c.fs);
+  $("month").innerHTML=`${money(c.fm)} <i>/mês</i>`;
+  $("disc").textContent=`-${c.pct}%`;
+  $("gross").textContent=c.pct?`Sem desconto: ${money(c.setup)} + ${money(c.month)}/mês`:"Sem desconto aplicado";
+  $("propose").disabled=!c.n;
+}
+$("grid").addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(!b)return;toggle(b.dataset.id)});
+$("items").addEventListener("click",e=>{const b=e.target.closest("[data-rm]");if(b)toggle(b.dataset.rm)});
+function toggle(id){sel.has(id)?sel.delete(id):sel.add(id);render()}
+$("all").addEventListener("change",e=>{sel=e.target.checked?new Set(D.solutions.map(x=>x.id)):new Set();render()});
+$("reset").addEventListener("click",()=>{sel=new Set();render();window.scrollTo({top:0,behavior:"smooth"})});
+$("theme").addEventListener("click",()=>{const r=document.documentElement,d=r.dataset.theme==="dark";r.dataset.theme=d?"light":"dark";$("theme").textContent=d?"☀️ Tema":"🌙 Tema"});
+/* proposta */
+$("propose").addEventListener("click",()=>{const c=calc();
+  $("msum").innerHTML=`<div class="sumr"><span>Soluções</span><b>${c.n}</b></div><div class="sumr"><span>Implantação</span><b>${money(c.fs)}</b></div><div class="sumr"><span>Mensalidade</span><b>${money(c.fm)}</b></div><div class="sumr"><span>Economia</span><b>${c.pct}%</b></div>`;
+  $("modal").classList.add("open");$("p-name").focus()});
+$("mcancel").addEventListener("click",()=>$("modal").classList.remove("open"));
+$("msend").addEventListener("click",()=>{
+  if(!$("p-name").value.trim()||!/\S+@\S+\.\S+/.test($("p-mail").value)){toast("Informe seu nome e um e-mail válido.");return}
+  $("modal").classList.remove("open");toast("Solicitação registrada. Entraremos em contato em breve.")});
+function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),3200)}
+/* editor */
+function buildEditor(){
+  $("e-brand").value=D.brand;$("e-cur").value=D.currency;
+  $("e-sols").innerHTML=D.solutions.map((x,i)=>`<fieldset><legend>${x.icon} ${x.name}</legend>
+    <label>Nome<input data-i="${i}" data-k="name" value="${x.name}"></label>
+    <label>Descrição<textarea data-i="${i}" data-k="desc">${x.desc}</textarea></label>
+    <label>Itens (um por linha)<textarea data-i="${i}" data-k="feats">${x.feats.join("\n")}</textarea></label>
+    <div class="row"><label>Implantação<input type="number" min="0" data-i="${i}" data-k="setup" value="${x.setup}"></label>
+    <label>Mensalidade<input type="number" min="0" data-i="${i}" data-k="monthly" value="${x.monthly}"></label></div></fieldset>`).join("");
+  $("e-tiers").innerHTML=[1,2,3,4,5].map(n=>`<label>${n} ${n===1?"solução":"soluções"}<input type="number" min="0" max="90" data-t="${n}" value="${D.tiers[n]||0}"></label>`).join("");
+  $("json").value=JSON.stringify(D,null,2);
+}
+$("drawer").addEventListener("input",e=>{const t=e.target;
+  if(t.id==="e-brand")D.brand=t.value;
+  else if(t.id==="e-cur"&&t.value.length===3)D.currency=t.value.toUpperCase();
+  else if(t.dataset.t)D.tiers[t.dataset.t]=Number(t.value);
+  else if(t.dataset.k){const s=D.solutions[t.dataset.i],k=t.dataset.k;
+    s[k]=k==="feats"?t.value.split("\n").filter(Boolean):(k==="setup"||k==="monthly")?Number(t.value):t.value}
+  else return;
+  save();render();if(t.id!=="json")$("json").value=JSON.stringify(D,null,2)});
+$("applyJson").addEventListener("click",()=>{try{const o=JSON.parse($("json").value);if(!o.solutions||!o.tiers)throw 0;D=o;sel=new Set([...sel].filter(id=>D.solutions.some(s=>s.id===id)));save();render();buildEditor();toast("Dados aplicados.")}catch(e){toast("JSON inválido. Confira a estrutura.")}});
+$("restore").addEventListener("click",()=>{D=clone(DEFAULT);save();render();buildEditor();toast("Dados padrão restaurados.")});
+$("openEdit").addEventListener("click",()=>{buildEditor();$("drawer").classList.add("open")});
+$("closeEdit").addEventListener("click",()=>$("drawer").classList.remove("open"));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){$("drawer").classList.remove("open");$("modal").classList.remove("open")}});
+render();
+</script>
+</body>
+</html>
